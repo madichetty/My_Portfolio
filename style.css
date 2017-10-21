@@ -1,0 +1,290 @@
+﻿html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+  overflow: hidden;
+}
+html body .container-fluid.body-content {
+  position: absolute;
+  top: 50px;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
+#header {
+    display:flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #008080;
+    height: 70px;
+    font-family:Centaur;
+    color:white;
+}
+#footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #008080;
+    height: 30px;
+    color:white;
+    font-family:Arial;
+    padding:5px;
+    text-align:center;
+}
+#menu {
+    width: 300px;
+    background: #5f9ea0;
+    display: inline;
+    
+}
+#menubar{
+    font-family:Calibri;
+}
+#logo {
+    flex: 1;
+    /*background: #008080;*/
+}
+#tagline {
+    font-style: italic;
+    font-size: 9px;
+    padding: 0px 3px 5px 90px;
+}
+
+
+.round-button {
+	width:240%;
+    height:240%;
+}
+
+/*.round-button1 {
+	width:240%;
+    height:240%;
+}*/
+
+.round-button-circle{
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:12px solid #008080;
+    overflow:hidden;
+    box-shadow: 0 0 3px gray;
+}
+
+
+
+.large {
+    height:150px;
+	width: 250px;
+}
+
+.medium {
+    height:100px;
+	width: 150px;
+}
+
+.small{
+    height:100px;
+    width:50px;
+}
+
+.brdRed {
+	border:12px solid #008080;
+}
+
+.brdGreen {
+	border:12px solid black;
+}
+
+.brdBlue {
+	border:12px solid #34495e;
+}
+
+.opportunities{
+    background-image:url('Home_Icon_Black.png');
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+    background-size: 100px 100px;
+ 
+}
+
+.indents{
+    background-image:url('Indent_Icon_Black.png');
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+   background-size: 100px 100px;
+}
+
+.Demands{
+    background-image:url('Profile2_Icon_Black.png');
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+    background-size: 100px 100px;
+}
+
+.Users{
+    background-image:url('Users_Icon_Black.png');
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+    background-size: 100px 100px;
+   
+}
+
+.Profiles{
+    background-image:url('Users2_Icon_Black.ico');
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+     background-size: 100px 100px;
+   
+}
+
+#border{
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:12px solid #008080;
+    overflow:hidden;
+    
+
+    box-shadow: 0 0 3px gray;
+}
+/*.round-button-circle1 {
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:12px solid #008080;
+    overflow:hidden;
+    box-shadow: 0 0 3px gray;
+}*/
+.round-button-circle:hover{
+	background-color:#5f9ea0;
+}
+.round-button a {
+    display: block;
+    float: left;
+    width: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    margin-top: -30px;
+    vertical-align: middle;
+}
+
+div.left, div.right, div.middle {
+ float: left;
+ padding: 100px;    
+}
+
+.images{
+    width:80px;
+    height:80px;
+
+    /*padding: 0px 2px 30px 2px;*/  
+}
+
+/*Style for displaying sidenav*/
+        body {
+            font-family: "Lato", sans-serif;
+            transition: background-color .5s;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 70px;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            /*padding-top: 60px;*/
+        }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidenav a:hover, .offcanvas a:focus {
+                    color: #f1f1f1;
+                }
+
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px !important;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
+
+
+/*Style for displaying nested dropdown*/
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    position:absolute;
+    top: 0;
+   left: -95%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: left;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;  
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;  
+}
+
+.dropdown-submenu.pull-left {
+    float: right;
+}

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="gemStore">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script type="text/javascript" src="displaytable.js"></script>
+    <style>
+        table, td, th {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body ng-controller="StoreController as store">
+    <div id="tabledata" align="center">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>DemandReference</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Status</th>
+                <th>SubStatus</th>
+                <th>SubmittedOn</th>
+            </tr>
+            <tr ng-repeat="product in store.products">
+                <td>{{product.ID}}</td>
+                <td>{{product.DemandReference}}</td>
+                <td>{{product.FirstName}}</td>
+                <td>{{product.LastName}}</td>
+                <td>{{product.Status}}</td>
+                <td>{{product.SubStatus}}</td>
+                <td>{{product.SubmittedOn}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

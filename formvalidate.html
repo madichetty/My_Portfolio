@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+    <h1><i>Form Validation</i></h1>
+    <form name="userform" ng-submit="submitform(userform.$valid)" novalidate>
+        <div>
+            <label>First Name</label>
+            <input type="text" name="firstname" ng-model="firstname" required />
+            <span ng-show="userform.firstname.$invalid && !userform.firstname.$pristine" class="help-block">
+                FirstName is mandatory.
+            </span>
+        </div>
+
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="lastname" ng-model="user.lastname" required />
+            <span ng-show="userform.lastname.$invalid && !userform.lastname.$pristine" class="help-block">
+                LastName is mandatory.
+            </span>
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" ng-model="user.email" required />
+            <span ng-show="userform.email.$invalid && !userform.email.$pristine" class="help-block">
+                Email is mandatory
+            </span>
+        </div>
+
+        <div>
+            <label>Phone Number</label>
+            <input type="number" name="phonenumber" ng-model="user.phonenumber" ng-minlength="10" ng-maxlength="10" />
+            <span class="help-block"
+                  ng-show="((userform.email.$invalid && !userform.email.$pristine) &&
+                           (userform.phonenumber.$error.minlength ||
+                           userform.phonenumber.$error.maxlength) &&
+                           userform.phonenumber.$dirty) ">
+                Phone number should be 10 digits and valid one
+            </span>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-disabled="userform.$invalid">Submit</button>
+    </form>
+</body>
+</html>

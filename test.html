@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <script>
+        function addOption(opt) {
+            option = opt;
+            var childWindow = window.open("dynamicbutton.html", "DB", "top=400, width=300,height=200,location=0,menubar=no,resizable=no,scrollbars=0,toolbar=0");
+        }
+        var option = null;
+
+        function addButton(size, color, image) {
+            alert("Hello From Child Window size = " + size + " Color " + color + " image " + image);
+
+            var newBtnDiv = "<div class='right'><div class='round-button-circle " + color + " " + size + " " + image + "'/><a href='#/' class=\"round-button\">";
+            newBtnDiv = newBtnDiv + "</a></div><center><label style=\"margin-top:3px;\"><font size=\"4\" style=\"font-family:Calibri\"></center>" + option + "</font></label></div>";
+            newBtnDiv = newBtnDiv + "</div>";
+
+            console.log(newBtnDiv);
+
+            var btnsDiv = document.getElementById("btnsDiv");
+            var btnsDivHTML = btnsDiv.innerHTML;
+            btnsDivHTML = btnsDivHTML + newBtnDiv;
+            btnsDiv.innerHTML = btnsDivHTML;
+        }
+    </script>
+    <script>
+        function logout() {
+            FB.logout(function (response) {
+                // user is now logged out
+            });
+        }
+    </script>
+    <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+    </script>
+</head>
+<body>
+
+    <div class="container-fluid.body-content">
+
+
+        <div id="main">
+            <!--header-->
+            <div id="header">
+                <div id="menu">
+                    <!--<span style="font-size:30px;cursor:pointer;padding-bottom:0px;padding-left:5px; " onclick="openNav()">
+                    <b><a class="navbar-brand" href="#"><font size="5" color="white" style="padding-left:5px;">☰ SPRINGBOARD</font></a></b></span>-->
+                    <span style="font-size:30px;cursor:pointer" onclick="sidebarNav()">☰ </span><a href="#/" style="text-decoration:none; font-size:30px; color:white">SPRINGBOARD</a>
+                    <div id="tagline"><font size="2" color="white"><center>...fulfillment made easy</center></font></div>
+                </div>
+
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" data-rel="close" class="closebtn" onclick="closeNav()"></a>
+                    <a href="#/" onClick="addOption('Opportunties')">Opportunities</a>
+                    <a href="#/" onClick="addOption('Indents')">Indents</a>
+                    <a href="#/" onClick="addOption('Demands')">Demands</a>
+                    <a href="#/" onclick="addOption('Users')">Users</a>
+                    <a href="#/" onclick="addOption('Profiles')">Profiles</a>
+                </div>
+
+                <div id="menubar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" align="center" style="margin-top:20px;"><font size="3" color="white">About Us |</font></a></li>
+                        <li><a href="#" align="center" style="margin-top:20px;"><font size="3" color="white">Contact Us</font></a></li>
+                    </ul>
+                </div>
+
+
+                <div id="logo" class="dropdown">
+                    <img src="Mainprofile_Icon_white.png" style="background-color:#008080" width="68" height="68" align="right" id="menu1" data-toggle="dropdown" class="btn dropdown-toggle">
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
+                        <li><a href="#/">Edit Profile</a></li>
+                        <li><a href="#/">View Account</a></li>
+                        <li><a href="#" onclick="signOut();">logout</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu pull-left">
+                            <a tabindex="-1" href="#/">Change Theme</a>
+                            <ul class="dropdown-menu" style="background-color:antiquewhite">
+                                <li style="display:inline-block">
+                                    <span>
+                                        <input type="button" style="height:40px; width:40px; background-color:#A93226" onclick="color('#A93226')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#CB4335" onclick="color('#CB4335')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#7D3CA8" onclick="color('#7D3CA8')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#2471A3" onclick="color('#2471A3')" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <input type="button" style="height:40px; width:40px; background-color:#2E86C1" onclick="color('#2E86C1')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#008080" onclick="color('#008080')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#1ABC9C" onclick="color('#1ABC9C')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#196F3D" onclick="color('#196F3D')" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <input type="button" style="height:40px; width:40px; background-color:#B7950B" onclick="color('#B7950B')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#B9770E" onclick="color('#B9770E')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#A04000" onclick="color('#A04000')" />
+                                        <input type="button" style="height:40px; width:40px; background-color:#34495E" onclick="color('#34495E')" />
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <script>
+                var image = window.sessionStorage['image'];
+                document.getElementById('menu1').innerHTML = image;
+            </script>
+            <div id="body">
+                <div id="btnsDiv" class="nav nav-tabs-justified">
+
+                    <div style="padding-bottom:50px; padding-top:50px;" >
+                        <center>
+                            <ng-view>
+                                
+                            </ng-view>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--footer-->
+        <div id="footer">
+            <div class="span12">
+                <center><p>Copyright &copy; 2016. All Rights Reserved</p></center>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function sidebarNav() {
+            if (document.getElementById("mySidenav").style.width == 0) {
+                openNav();
+            }
+            else {
+                closeNav();
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+    <script>
+        function color(col) {
+            document.getElementById("header").style.backgroundColor = col;
+            document.getElementById("footer").style.backgroundColor = col;
+            document.getElementById("menu1").style.backgroundColor = col;
+            document.getElementById("menu").style.backgroundColor = col;
+            window.sessionStorage['currentcolor'] = col;
+        }
+    </script>
+</body>
+</html>

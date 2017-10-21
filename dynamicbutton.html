@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <script>
+	function addButtonInOpener() {
+		var size = document.forms[0].elements['size'].value;
+		var color = document.forms[0].elements['color'].value;
+		var image = document.forms[0].elements['image'].value;
+
+		window.opener.addButton(size, color, image);
+		window.close();
+	}
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Color</td>
+                <td></td>
+                <td>
+                    <select name="color">
+                        <option value="brdRed">Red</option>
+                        <option value="brdGreen">Green</option>
+                        <option value="brdBlue">Blue</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Size</td>
+                <td></td>
+                <td>
+                    <select name="size">
+                        <option value="large">Large</option>
+                        <option value="medium">Medium</option>
+                        <option value="small">Small</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td></td>
+                <td>
+                    <select name="image">
+                        <option value="opportunities">Home</option>
+                        <option value="indents" >Indent</option>
+                        <option value="users" >Profile</option>
+                        <option value="Demands">Users</option>
+                        <option value="Profiles">Users2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="button" onClick="addButtonInOpener()" value="Add Button" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
